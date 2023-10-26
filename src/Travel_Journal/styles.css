@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-family: "Inter";
+}
+
+h1,h2,h3,h4,h5,p {
+    margin: 0;
+}
+
+.body-container {
+    max-width: 550px;
+    margin: 0 auto;
+
+    & .header {
+        text-align: center;
+        padding: 1em 0;
+        background-color: #f55a5a;
+        color: white;
+
+        & h3 {
+            font-weight: 400;
+            font-size: 2.63vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & i {
+                font-size: 4.36vw;
+                margin-right: 0.37em;
+            }
+        }
+
+        
+    }
+
+    & .cards {
+        margin: 5.82vw;
+
+        & .card {
+            padding: 1em 0;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            border-bottom: 1px solid rgb(241, 241, 241);
+    
+            & .photo {
+                min-width: 22.727vw;
+                width: 22.727vw;
+                height: 30.545vw;
+                border-radius: 5px;
+                overflow: hidden;
+                position: relative;
+                
+                & .image {
+                    height: 100%;
+                    position: absolute;
+                    left: -50%;
+                }
+            }
+    
+            & .info {
+                color: #2b283a;
+    
+                & h3 {
+                    font-size: 1.86vw;
+                    font-weight: 500;
+                    letter-spacing: 3px;
+    
+                    & i {
+                        color: #f55a5a;
+                    }
+    
+                    & a {
+                        letter-spacing: 0;
+                        font-weight: 300;
+                        color: #918e9b;
+                        margin-left: 1em;
+                    }
+                }
+    
+                & h1 {
+                    font-size: 4.545vw;
+                    margin: 0.2em 0 0.5em 0;
+                }
+    
+                & h4 {
+                    font-size: 1.86vw;
+                }
+    
+                & p {
+                    font-size: 1.86vw;
+                    margin: 1em 0 0 0;
+                    line-height: 1.5em;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 550px) {
+
+    .body-container {
+
+        & .header {
+    
+            & h3 {
+                font-size: 14.46px;
+    
+                & i {
+                    font-size: 24px;
+                }
+            }
+    
+            
+        }
+
+        & .cards {
+            margin: 2em;
+
+            & .card {
+                padding: 1em 0;
+
+                & .photo {
+                    min-width: 125px;
+                    width: 125px;
+                    height: 168px;
+                }
+
+                & .info {
+
+                    & h3 {
+                        font-size: 10.24px;
+                    }
+
+                    & h1 {
+                        font-size: 25px;
+                    }
+        
+                    & h4 {
+                        font-size: 10.24px;
+                    }
+        
+                    & p {
+                        font-size: 10.24px;
+                    }
+                }
+            }
+        }
+    }
+}

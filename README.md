@@ -3,3 +3,5 @@
 Projects:
 
 - React Info Site
+- AirBnb Clone
+- Digital Business Card

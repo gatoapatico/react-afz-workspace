@@ -10,8 +10,12 @@ import './index.css' */
 import './React_Info/styles.css' */
 
 /* AIRBNB CLONE PROJECT */
-import App from './AirBnb_Clone/App'
-import './AirBnb_Clone/styles.css'
+/* import App from './AirBnb_Clone/App'
+import './AirBnb_Clone/styles.css' */
+
+/* DIGITAL BUSINESS CARD PROJECT */
+import App from './Digital_Business_Card/App'
+import './Digital_Business_Card/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

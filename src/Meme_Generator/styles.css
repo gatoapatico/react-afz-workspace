@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-family: "Karla";
+}
+
+h1,h2,h3,h4,h5,p {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-container {
+    color: white;
+    max-width: 550px;
+    border: 1px solid rgb(237, 237, 237);
+
+    & .header {
+        background: linear-gradient(to right, #672280, #a526d2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em;
+
+        & h2 {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+
+            & img {
+                width: 30px;
+                margin-right: 0.2em;
+            }
+        }
+
+        & .subtitle {
+            font-size: 0.75rem;
+            font-family: "Inter";
+            font-weight: 300;
+        }
+    }
+
+    & .main-container {
+        margin: 2em;
+
+        & .form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+
+            & input {
+                font-family: inherit;
+                border: 1px solid rgb(216, 216, 216);
+                width: 40%;
+                flex-grow: 1;
+                padding: 1em;
+                border-radius: 5px;
+                font-size: 0.75rem;
+            }
+
+            & button {
+                width: 100%;
+                background: linear-gradient(to right, #672280, #a526d2);
+                color: white;
+                font-family: inherit;
+                font-weight: 600;
+                font-size: 1rem;
+                padding: 1em;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            & button:active {
+                background: linear-gradient(to right, #531c67, #9122ba);
+            }
+        }
+
+        & .image-meme {
+            margin: 2em 0;
+            position: relative;
+
+            & img {
+                display: block;
+                width: 100%;
+            }
+
+            & h1 {
+                position: absolute;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                -webkit-text-stroke: 1px #232323;
+            }
+
+            & .txt_1 {
+                text-align: center;
+                width: 100%;
+                top: 0.5em;
+                left: 0;
+            }
+
+            & .txt_2 {
+                text-align: center;
+                width: 100%;
+                bottom: 0.5em;
+                left: 0;
+            }
+        }
+    }
+}

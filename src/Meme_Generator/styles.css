@@ -14,7 +14,7 @@ h1,h2,h3,h4,h5,p {
 }
 
 body {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,6 +99,7 @@ body {
                 position: absolute;
                 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
                 -webkit-text-stroke: 1px #232323;
+                font-size: 5.8vw;
             }
 
             & .txt_1 {
@@ -113,6 +114,22 @@ body {
                 width: 100%;
                 bottom: 0.5em;
                 left: 0;
+            }
+        }
+    }
+}
+
+@media (min-width:550px) {
+    
+    .body-container {
+    
+        & .main-container {
+
+            & .image-meme {
+    
+                & h1 {
+                    font-size: 32px;
+                }
             }
         }
     }

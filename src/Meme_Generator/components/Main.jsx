@@ -1,16 +1,24 @@
+import { useState } from 'react';
 import memeImage from '../images/memeimg.png'
 import memeData from '../memeData'
 
 export default function Main() {
 
-    function handleClick() {
-        console.log(memeData.data.memes.length);
-    }
+    const [meme, setMeme] = useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "http://i.imgflip.com/1bij.jpg"
+    });
 
+    const [allMemeImages, setAllMemeImages] = useState(memeData);
+    
     function getRandomMeme() {
-        const MAX_LENGTH = memeData.data.memes.length;
+        const MAX_LENGTH = allMemeImages.data.memes.length;
         const index = Math.floor(Math.random() * MAX_LENGTH);
-        console.log(memeData.data.memes[index].url);
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            randomImage: allMemeImages.data.memes[index].url
+        }));
     }
 
     return (
@@ -21,7 +29,7 @@ export default function Main() {
                 <button onClick={getRandomMeme}>Get a new meme image 🎭</button>
             </div>
             <div className='image-meme'>
-                <img src={memeImage} alt="Meme Image" />
+                <img src={meme.randomImage} alt="Meme Image" />
                 <h1 className='txt_1'>SHUT UP</h1>
                 <h1 className='txt_2'>AND TAKE MY MONEY</h1>
             </div>

@@ -6,3 +6,5 @@ Projects:
 - AirBnb Clone
 - Digital Business Card
 - My Travel Journal
+- Meme Generator
+- Tenzies Game

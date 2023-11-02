@@ -22,8 +22,12 @@ import './Digital_Business_Card/styles.css' */
 import './Travel_Journal/styles.css' */
 
 /* MEME GENERATOR PROJECT */
-import App from './Meme_Generator/App'
-import './Meme_Generator/styles.css'
+/* import App from './Meme_Generator/App'
+import './Meme_Generator/styles.css' */
+
+/* TENZIES GAME PROJECT */
+import App from './Tenzies_Game/App'
+import './Tenzies_Game/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

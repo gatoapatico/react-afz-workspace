@@ -18,7 +18,7 @@ export default function Quiz() {
         <Question
             key={index}
             id={index}
-            question={question.question}
+            question={new DOMParser().parseFromString(question.question, 'text/html').body.textContent}
             alternatives={[...question.incorrect_answers, question.correct_answer]}
         />
     );

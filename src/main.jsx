@@ -26,8 +26,12 @@ import './Travel_Journal/styles.css' */
 import './Meme_Generator/styles.css' */
 
 /* TENZIES GAME PROJECT */
-import App from './Tenzies_Game/App'
-import './Tenzies_Game/styles.css'
+/* import App from './Tenzies_Game/App'
+import './Tenzies_Game/styles.css' */
+
+/* QUIZZICAL APP PROJECT*/
+import App from './Quizzical/App'
+import './Quizzical/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

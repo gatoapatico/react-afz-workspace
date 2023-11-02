@@ -8,3 +8,4 @@ Projects:
 - My Travel Journal
 - Meme Generator
 - Tenzies Game
+- Quizzical App

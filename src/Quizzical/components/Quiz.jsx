@@ -1,34 +1,77 @@
 import { useState,useEffect } from "react";
 import Question from "./Question";
 
-export default function Quiz() {
+export default function Quiz(props) {
 
-    const [questionsArray, setQuestionsArray] = useState([]);
+    const [isReadyToCheck, setIsReadyToCheck] = useState(false);
+    const [isChecked, setIsChecked] = useState(false);
+    const [score, setScore] = useState(0);
+    const [questionsArray, setQuestionsArray] = useState(props.questions.map((question, index) => ({
+        questionId: index,
+        question: parseHtmlEntity(question.question),
+        isReady: false,
+        answer: question.correct_answer,
+        optionSelected: "",
+        alternatives:
+            [...question.incorrect_answers, question.correct_answer]
+                .sort(() => Math.random() - 0.5)
+                .map(option => parseHtmlEntity(option))
+    })));
 
-    useEffect(() => {
-        async function getQuestions() {
-            const res = await fetch('https://opentdb.com/api.php?amount=5&category=12&difficulty=medium&type=multiple');
-            const data = await res.json();
-            setQuestionsArray(data.results);
-        }
-        getQuestions();
-    }, []);
-
-    const questionElements = questionsArray.map((question, index) =>
-        <Question
-            key={index}
-            id={index}
-            question={new DOMParser().parseFromString(question.question, 'text/html').body.textContent}
-            alternatives={[...question.incorrect_answers, question.correct_answer]}
+    const questionElements = questionsArray.map(question =>
+        <Question 
+            key={question.questionId}
+            id={question.questionId}
+            question={question}
+            toggleReady={toggleReady}
+            saveOption={saveOption}
+            isChecked={isChecked}
         />
     );
+
+    function parseHtmlEntity(text) {
+        return new DOMParser().parseFromString(text, 'text/html').body.textContent;
+    }
+
+    function toggleReady(id) {
+        setQuestionsArray(prevArray => prevArray.map(question => {
+            return question.questionId === id ?
+            {...question, isReady: true} :
+            question
+        }));
+    }
+
+    function saveOption(id, option) {
+        setQuestionsArray(prevArray => prevArray.map(question => {
+            return question.questionId == id ?
+            {...question, optionSelected: option} :
+            question
+        }));
+    }
+
+    function checkAnswers() {
+        if(isReadyToCheck) {
+            setScore(questionsArray.filter(question => question.optionSelected === question.answer).length);
+            setIsChecked(true);
+        }
+        else {
+            console.log(questionsArray);
+        }
+    }
+
+    useEffect(() => {
+        questionsArray.filter(question => question.isReady).length === questionsArray.length && setIsReadyToCheck(true);
+    }, [questionsArray]);
 
     return (
         <main className="main-quiz">
             <div className="questions">
                 {questionElements}
             </div>
-            <button className="btn-check">Check answers</button>
+            <div className="resume">
+                {isChecked && <h2>You scored {score}/5 correct answers</h2>}
+                <button className="btn-check" onClick={isChecked ? props.restart : checkAnswers}>{isChecked ? "Play again" : "Check answers"}</button>
+            </div>
         </main>
     )
 }

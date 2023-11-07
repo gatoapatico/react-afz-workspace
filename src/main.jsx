@@ -30,11 +30,15 @@ import './Meme_Generator/styles.css' */
 import './Tenzies_Game/styles.css' */
 
 /* QUIZZICAL APP PROJECT*/
-import App from './Quizzical/App'
-import './Quizzical/styles.css'
+/* import App from './Quizzical/App'
+import './Quizzical/styles.css' */
+
+/* VAN LIFE APP - REACT ROUTER PROJECT */
+import App from './VanLife/App'
+import './VanLife/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 )
